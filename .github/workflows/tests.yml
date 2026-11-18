@@ -1,0 +1,24 @@
+name: tests
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  merge-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run merge_ocr tests
+        run: python -m unittest discover -s tests -v
+
+  build-swift:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build ocrvideo and grab
+        run: ./build.sh

@@ -1,0 +1,6 @@
+bin/
+*.json
+*.md.out
+frames/
+.DS_Store
+*.sync-conflict-*
