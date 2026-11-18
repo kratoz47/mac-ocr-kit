@@ -9,8 +9,8 @@ jobs:
   merge-tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - name: Run merge_ocr tests
@@ -19,6 +19,6 @@ jobs:
   build-swift:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Build ocrvideo and grab
         run: ./build.sh
